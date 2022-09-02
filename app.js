@@ -1,32 +1,29 @@
 const btn = document.querySelector('#geo');
+
 btn.addEventListener('click', geoFindMe);
 
+// prevent form submission
+
+// Get the location of the user and put address in the input field
 function geoFindMe() {
-
   const status = document.querySelector('#status');
-  const mapLink = document.querySelector('#map-link');
-
-  mapLink.href = '';
-  mapLink.textContent = '';
-
+  status.innerHTML = 'Getting Location...';
+  if (!navigator.geolocation) {
+    status.innerHTML = 'Geolocation is not supported by your browser';
+    return;
+  }
   function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-
-    status.textContent = '';
-    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    const lat = document.querySelector('#lat');
+    const lon = document.querySelector('#lon');
+    lat.value = latitude;
+    lon.value = longitude;
+    status.innerHTML = '';
   }
-
   function error() {
-    status.textContent = 'Unable to retrieve your location';
+    status.innerHTML = 'Unable to retrieve your location';
   }
-
-  if (!navigator.geolocation) {
-    status.textContent = 'Geolocation is not supported by your browser';
-  } else {
-    status.textContent = 'Locating…';
-    navigator.geolocation.getCurrentPosition(success, error);
-  }
-
+  navigator.geolocation.getCurrentPosition(success, error);
 }
+
