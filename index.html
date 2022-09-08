@@ -9,6 +9,8 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -17,7 +19,7 @@
       <a href="#" class="brand-logo">NPU</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="sass.html">Find It</a></li>
-        <li><a href="badges.html">My NPU</a></li>
+        <li><a href="NPU.html">My NPU</a></li>
         <li><a href="collapsible.html">CoA Contacts</a></li>
       </ul>
     </div>
@@ -25,23 +27,18 @@
 
   <div class="container">
     <form class="col s12">
-      <div class="row">
+      <div class="row m2">
+        <br>
         <div class="input-field col s6">
-          <input placeholder="Home Address" id="first_name" type="text" class="">
+          <input placeholder="Home Address" id="address" type="text" class="">
           <label for="Address">Address</label>
-          <button id="geo">Locate Me</button>
+          <button id="search" class="btn">Search</button> <br> <br>
+          <button id="geo" class="btn blue"><span id="geo" class="material-symbols-outlined">
+              my_location
+            </span> Locate Me</button>
+          <p id='lat'>LAT: </p>
+          <p id='lon'>LON: </p>
           <span id="status" class="helper-text" data-error="Can't get your location.." data-success=""></span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          We'll send the results to this email:
-          <div class="input-field">
-            <input id="email_inline" type="email" class="validate">
-            <label for="email_inline">Email</label>
-            <span class="helper-text" data-error="Invalid" data-success=""></span>
-            <button type="submit" class="btn">SUBMIT</button>
-          </div>
         </div>
     </form>
   </div>
