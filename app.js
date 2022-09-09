@@ -1,11 +1,9 @@
 const btn = document.querySelector('#geo');
 
-btn.addEventListener('click', geoFindMe);
-
-// prevent form submission
-
+btn.addEventListener('click', (event) => {
+  // // prevent form submission
+  event.preventDefault();
 // Get the location of the user and put address in the input field
-function geoFindMe() {
   const status = document.querySelector('#status');
   status.innerHTML = 'Getting Location...';
   if (!navigator.geolocation) {
@@ -19,11 +17,12 @@ function geoFindMe() {
     const lon = document.querySelector('#lon');
     lat.value = latitude;
     lon.value = longitude;
-    status.innerHTML = '';
+    status.innerHTML = "Location found!" + latitude + " " + longitude;
   }
   function error() {
     status.innerHTML = 'Unable to retrieve your location';
   }
   navigator.geolocation.getCurrentPosition(success, error);
 }
+);
 
