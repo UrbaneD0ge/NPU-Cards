@@ -13,11 +13,11 @@ btn.addEventListener('click', (event) => {
   function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    const lat = document.querySelector('#lat');
-    const lon = document.querySelector('#lon');
-    lat.value = latitude;
-    lon.value = longitude;
-    status.innerHTML = "Location found!" + latitude + " " + longitude;
+    // const lat = document.querySelector('#lat');
+    // const lon = document.querySelector('#lon');
+    // lat.value = latitude;
+    // lon.value = longitude;
+    status.innerHTML = "Location found! " + latitude + ", " + longitude;
   }
   function error() {
     status.innerHTML = 'Unable to retrieve your location';
