@@ -25,4 +25,3 @@ btn.addEventListener('click', (event) => {
   navigator.geolocation.getCurrentPosition(success, error);
 }
 );
-
