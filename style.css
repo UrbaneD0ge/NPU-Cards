@@ -1,13 +1,7 @@
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+body {
+    background-color: whitesmoke;
 }
 
-#geo {
-  position: relative;
-  /* right: 5px; */
-  top: 5px;
+form {
+    padding: 2rem;
 }
