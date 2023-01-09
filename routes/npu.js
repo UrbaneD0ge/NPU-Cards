@@ -1,13 +1,12 @@
-// route for NPU
-
-var express = require('express');
-var router = express.Router();
-var request = require('request');
-var mongoose = require('mongoose');
-var Npu = require('../models/npu.js');
+const { application } = require('express');
+const express = require('express');
+const router = express.Router();
+const NPU = require('../models/NPUs');
 
 // GET /npu
-router.get('/', function (req, res, next) {
-  res.render('npu', { title: 'NPU' });
+router.get('/', async (req, res) => {
+
+  res.render('npu', { NPU: 'NPU' });
 });
 
+module.exports = router;
