@@ -18,22 +18,19 @@ btn.addEventListener('click', (event) => {
     // const lon = document.querySelector('#lon');
     // lat.value = latitude;
     // lon.value = longitude;
-    status.innerHTML = "Location found! " + latitude + ", " + longitude;
+    status.innerHTML = "Location found: " + latitude + ", " + longitude;
+    return latitude, longitude;
   }
   function error() {
     status.innerHTML = 'Unable to retrieve your location';
   }
   navigator.geolocation.getCurrentPosition(success, error);
-}
-);
+});
 
 addySearch.addEventListener('click', (event) => {
-  fetch('https://services5.arcgis.com/5RxyIIJ9boPdptdo/arcgis/rest/services/Official_NPU/FeatureServer')
+  event.preventDefault();
+  fetch(`https://services5.arcgis.com/5RxyIIJ9boPdptdo/arcgis/rest/services/Official_NPU/FeatureServer/?geometry=${latitude},${longitude}&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=4326&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnDistinctValues=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnGeometry=false&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token=}`)
     .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-    }
-    );
+      console.log(response);
+    });
 });

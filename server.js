@@ -3,6 +3,15 @@ const mongoose = require('mongoose');
 const app = express();
 const NPUrouter = require('./routes/npu');
 const mongoConnect = require('./config/keys.env');
+// const GISServices = require([
+//     "esri/config",
+//     "esri/Map",
+//     "esri/views/MapView",
+//     "esri/layers/FeatureLayer",
+//     "esri/widgets/Search"
+// ])
+
+
 
 mongoose.set('strictQuery', true);
 
