@@ -28,4 +28,12 @@ btn.addEventListener('click', (event) => {
 );
 
 addySearch.addEventListener('click', (event) => {
-  fetch
+  fetch('https://services5.arcgis.com/5RxyIIJ9boPdptdo/arcgis/rest/services/Official_NPU/FeatureServer')
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    }
+    );
+});

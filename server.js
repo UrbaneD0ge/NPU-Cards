@@ -4,12 +4,14 @@ const app = express();
 const NPUrouter = require('./routes/npu');
 const mongoConnect = require('./config/keys.env');
 
+mongoose.set('strictQuery', true);
+
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
 app.listen(3000 || process.env.PORT, () => {
-    console.log('Listening at http://localhost:' + process.env.PORT);
+    console.log('Listening at http://localhost:3000');
 });
 
 // Connecting to the database
