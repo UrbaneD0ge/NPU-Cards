@@ -1,4 +1,5 @@
 const btn = document.querySelector('#geo');
+const addySearch = document.querySelector('#addySearch');
 
 btn.addEventListener('click', (event) => {
   // // prevent form submission
@@ -25,3 +26,6 @@ btn.addEventListener('click', (event) => {
   navigator.geolocation.getCurrentPosition(success, error);
 }
 );
+
+addySearch.addEventListener('click', (event) => {
+  fetch
