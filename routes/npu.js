@@ -6,7 +6,7 @@ const NPU = require('../models/NPUs');
 // GET /npu
 router.get('/', async (req, res) => {
 
-  res.render('npu', { NPU: 'NPU' });
+  res.render('npu', { NPU: NPU });
 });
 
 module.exports = router;

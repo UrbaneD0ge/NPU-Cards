@@ -3,15 +3,6 @@ const mongoose = require('mongoose');
 const app = express();
 const NPUrouter = require('./routes/npu');
 const mongoConnect = require('./config/keys.env');
-// const GISServices = require([
-//     "esri/config",
-//     "esri/Map",
-//     "esri/views/MapView",
-//     "esri/layers/FeatureLayer",
-//     "esri/widgets/Search"
-// ])
-
-
 
 mongoose.set('strictQuery', true);
 
@@ -31,6 +22,10 @@ mongoose.connect(mongoConnect, {
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
+});
+
+app.get('/find', async (req, res) => {
+    res.render('find');
 });
 
 app.get('/', async (req, res) => {
