@@ -5,17 +5,25 @@
         <h5 class="card-title">NPU-W
         </h5>
         <p>Neighborhood Planning Unit: <strong>
-            <%# NPU.NPU %>
+            <%= NPU.NPU %>
           </strong></p>
-        <p>Chair: <strong>Kevin Friend</strong></p>
-        <p>Meeting Frequency: <strong>Fourth Wednesdays</strong></p>
+        <p>Chair: <strong>
+            <%= NPU.chair %>
+          </strong></p>
+        <p>Meeting Frequency: <strong>
+            <%= NPU.meeting.split(',')[0] %>
+          </strong></p>
         <p>Meeting Location: <strong>Virtual</strong></p>
-        <p>Meeting Time: <strong>6:30pm</strong></p>
+        <p>Meeting Time: <strong>
+            <%= NPU.meeting.split(',')[1] %>
+          </strong></p>
         <p>Meeting Location: <strong>physical location</strong></p>
       </div>
       <div class="card-action">
-        <a href="mailto:WChair@npuw.org">WChair@npuw.org</a>
-        <a href="#">Zoom Link</a>
+        <a href="mailto:<%= NPU.chairE %>">
+          <%= NPU.chairE %>
+        </a><br>
+        <a href="<%= NPU.ZoomURL %>" target='_blank' noopener noreferrer>Zoom Link</a>
       </div>
     </div>
   </div>
