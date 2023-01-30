@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const NPUrouter = require('./routes/npu');
-const mongoConnect = require('./config/keys.env');
 
 mongoose.set('strictQuery', true);
 
@@ -15,7 +14,7 @@ app.listen(3000 || process.env.PORT, () => {
 });
 
 // Connecting to the database
-mongoose.connect(mongoConnect, {
+mongoose.connect(process.env.mongoConnect, {
     useNewUrlParser: true, useUnifiedTopology: true
 }).then(() => {
     console.log("Successfully connected to the database");
