@@ -126,3 +126,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 config/keys.env
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
