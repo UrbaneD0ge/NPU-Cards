@@ -3,5 +3,10 @@
     "addy",
     "Urouter"
   ],
-  "dotenv.enableAutocloaking": false
+  "dotenv.enableAutocloaking": false,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#382C12",
+    "titleBar.activeBackground": "#4F3D19",
+    "titleBar.activeForeground": "#FDFBF7"
+  }
 }
